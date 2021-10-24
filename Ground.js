@@ -1,0 +1,23 @@
+class Ground
+{
+    constructor(x, y, width, height)
+    {
+        var option = {isStatic: true}; //isStatic property makes an object stationary if it's value is true
+
+        this.bodyX = x; //this is referring to ground object
+        this.bodyY = y;
+        this.bodyW = width;
+        this.bodyH = height;
+
+        this.body = Bodies.rectangle(this.bodyX, this.bodyY, this.bodyW, this.bodyH, option);
+        World.add(myWorld, this.body);
+    }
+
+    display()
+    {
+        rectMode(CENTER);
+        fill("brown");
+        rect(this.body.position.x, this.body.position.y, this.bodyW, this.bodyH);
+    }
+
+};
